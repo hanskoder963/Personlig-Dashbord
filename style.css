@@ -120,6 +120,29 @@ footer a {
   padding: 0;
 }
 
+/* === Animasjoner === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+}
+
 #shopping-list li,
 #cart-list li {
   display: flex;
@@ -130,6 +153,13 @@ footer a {
   margin-bottom: 0.5rem;
   border-radius: 5px;
   border: 1px solid #ccc;
+  animation: fadeIn 0.1s ease-in;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+#shopping-list li.removing,
+#cart-list li.removing {
+  animation: fadeOut 0.1s ease-out forwards;
 }
 
 .action-btn {

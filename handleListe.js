@@ -90,16 +90,36 @@ function moveToCart(id) {
   }
 }
 
-// === Slett vare fra handleliste ===
+// === Slett vare fra handleliste med animasjon ===
 function deleteFromShopping(id) {
-  shoppingItems = shoppingItems.filter((i) => i.id !== id);
-  renderLists();
+  const li = [...shoppingList.children].find(
+    (li) =>
+      li.querySelector(".delete-btn")?.getAttribute("onclick") ===
+      `deleteFromShopping('${id}')`
+  );
+  if (li) {
+    li.classList.add("removing");
+    setTimeout(() => {
+      shoppingItems = shoppingItems.filter((i) => i.id !== id);
+      renderLists();
+    }, 200);
+  }
 }
 
-// === Slett vare fra handlekurv ===
+// === Slett vare fra handlekurv med animasjon ===
 function deleteFromCart(id) {
-  cartItems = cartItems.filter((i) => i.id !== id);
-  renderLists();
+  const li = [...cartList.children].find(
+    (li) =>
+      li.querySelector(".delete-btn")?.getAttribute("onclick") ===
+      `deleteFromCart('${id}')`
+  );
+  if (li) {
+    li.classList.add("removing");
+    setTimeout(() => {
+      cartItems = cartItems.filter((i) => i.id !== id);
+      renderLists();
+    }, 200);
+  }
 }
 
 // === Fullfør handel ===
