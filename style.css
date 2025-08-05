@@ -1,9 +1,10 @@
-/* ====== Generelt layout ====== */
+/* === Reset og base === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: sans-serif;
   background-color: #f4f4f4;
@@ -12,28 +13,36 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* === Header === */
 header {
   background: #333;
   color: white;
   padding: 1rem;
   text-align: center;
 }
+
+/* === Layout === */
 .container {
   display: flex;
   flex: 1;
 }
+
 aside {
   width: 200px;
   background: #222;
   color: white;
   padding: 1rem;
 }
+
 aside ul {
   list-style: none;
 }
+
 aside li {
   margin-bottom: 10px;
 }
+
 aside button {
   background: none;
   color: white;
@@ -44,30 +53,55 @@ aside button {
   width: 100%;
   padding: 0.5rem;
 }
+
 aside button:hover {
   background: #444;
 }
+
 main {
   flex: 1;
   padding: 2rem;
   background: white;
+  overflow-y: auto;
 }
+
+/* === Footer === */
 footer {
   background: #eee;
   padding: 1rem;
   text-align: center;
 }
+
 footer a {
   text-decoration: none;
   color: #333;
 }
 
-/* ====== Handleliste ====== */
+/* === Handleliste og handlekurv === */
+#shopping-form {
+  max-width: 600px;
+  margin: 1rem auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#shopping-form input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+#shopping-form button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
 .lists-container {
   display: flex;
   gap: 2rem;
   justify-content: center;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .list-box {
@@ -129,10 +163,20 @@ footer a {
   background: darkgreen;
 }
 
+/* === Historikk === */
 .history-entry {
   background: #fff;
   border: 1px solid #ccc;
   margin-bottom: 1rem;
   padding: 0.5rem;
   border-radius: 5px;
+}
+
+.history-entry h4 {
+  margin-bottom: 0.5rem;
+}
+
+.history-entry ul {
+  list-style: disc;
+  padding-left: 1.5rem;
 }
