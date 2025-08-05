@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mitt Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="handleliste.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Mitt Dashboard</h1>
+    </header>
+
+    <div class="container">
+      <aside>
+        <nav>
+          <ul>
+            <li><button data-section="home">🏠 Hjem</button></li>
+            <li><button data-section="folders">📁 Mapper</button></li>
+            <li><button data-section="images">🖼️ Bilder</button></li>
+            <li><button data-section="videos">🎥 Videoer</button></li>
+            <li><button data-section="tools">🛠️ Verktøy</button></li>
+            <li><button data-section="shopping">🛒 Handleliste</button></li>
+            <li><button data-section="history">📂 Historikk</button></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main id="main-content">
+        <p>Velg en seksjon fra menyen for å starte.</p>
+
+        <!-- Handleliste -->
+        <div id="shopping-section" class="section" style="display: none">
+          <h2>🛒 Handleliste</h2>
+
+          <form id="shopping-form">
+            <input
+              type="text"
+              id="item-input"
+              placeholder="Skriv inn vare..."
+              required
+            />
+            <button type="submit">Legg til</button>
+          </form>
+
+          <button id="complete-purchase" class="complete-btn">
+            ✅ Fullfør handel
+          </button>
+
+          <div class="lists-container">
+            <div class="list-box">
+              <h3>Planlagt handel</h3>
+              <ul id="shopping-list"></ul>
+            </div>
+
+            <div class="list-box">
+              <h3>I handlekurven</h3>
+              <ul id="cart-list"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Historikk -->
+        <div id="history-section" class="section" style="display: none">
+          <h2>📂 Handlet Historikk</h2>
+          <div id="history-list"></div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <p>
+        Lenker: <a href="https://github.com/">GitHub</a> |
+        <a href="https://calendar.google.com/">Google Kalender</a>
+      </p>
+    </footer>
+  </body>
+</html>
